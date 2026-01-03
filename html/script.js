@@ -39,14 +39,14 @@ function renderTargets(targetList) {
     
     targetList.forEach(target => {
         const operations = [
-            { op: 'gotoo', name: 'TELEPORT', danger: false },
-            { op: 'bring', name: 'EXTRACT', danger: false },
-            { op: 'heal', name: 'MEDIC', danger: false },
-            { op: 'revive', name: 'REVIVE', danger: false },
-            { op: 'armor', name: 'ARMOR', danger: false },
-            { op: 'openinv', name: 'SCAN', danger: false },
-            { op: 'kick', name: 'EJECT', danger: true },
-            { op: 'ban', name: 'ELIMINATE', danger: true }
+            { op: 'gotoo', name: 'Goto', danger: false },
+            { op: 'bring', name: 'Bring', danger: false },
+            { op: 'heal', name: 'Heal', danger: false },
+            { op: 'revive', name: 'Revive', danger: false },
+            { op: 'armor', name: 'Armor', danger: false },
+            { op: 'openinv', name: 'Inventory', danger: false },
+            { op: 'kick', name: 'Kick', danger: true },
+            { op: 'ban', name: 'Ban', danger: true }
         ];
         
         let actionsHTML = '';
@@ -129,11 +129,11 @@ function scanThreats() {
             
             threatItem.innerHTML = `
                 <div class="threat-info">
-                    <h4>THREAT: ${threat.name}</h4>
+                    <h4>Ban: ${threat.name}</h4>
                     <p>ADMIN: ${threat.admin} | REASON: ${threat.reason} | DATE: ${threat.date}</p>
                 </div>
                 <button class="neutralize" onclick="neutralizeThreat('${threat.identifiers ? threat.identifiers[0] : threat.license}')">
-                    NEUTRALIZE
+                    Unban
                 </button>
             `;
             
